@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDE Teaching – Open Education Resources</title>
+  <meta name="description" content="Open Education Resources for sustainability transformations and Education for Sustainable Development, developed at the Centre for Development and Environment, University of Bern.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:   #0c641f;
+      --green-mid:    #0f7d28;
+      --green-light:  #e8f4eb;
+      --teal:         #046178;
+      --teal-light:   #e0f2f5;
+      --red:          #d6002b;
+      --text:         #1a1a1a;
+      --text-muted:   #5a5a5a;
+      --border:       #d8e0d8;
+      --white:        #ffffff;
+      --bg-alt:       #f7f9f7;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a { color: var(--green-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Top bar ─────────────────────────────────────── */
+    .topbar {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.75);
+      font-size: 0.78rem;
+      padding: 0.4rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar a { color: rgba(255,255,255,0.85); }
+    .topbar a:hover { color: #fff; text-decoration: underline; }
+
+    /* ── Header ──────────────────────────────────────── */
+    header {
+      background: var(--white);
+      border-bottom: 3px solid var(--green-dark);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo-mark {
+      width: 44px; height: 44px;
+      background: var(--green-dark);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-mark span {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -0.5px;
+    }
+    .site-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      letter-spacing: -0.3px;
+    }
+    .site-title .org { font-weight: 400; color: var(--text-muted); font-size: 0.9rem; }
+
+    /* ── Hero ────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, #1a5c30 60%, var(--teal) 100%);
+      color: #fff;
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); text-decoration: none; }
+    .btn-primary { background: #fff; color: var(--green-dark); }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6); }
+
+    /* ── Section wrapper ─────────────────────────────── */
+    .section { padding: 3.5rem 2rem; }
+    .section-alt { background: var(--bg-alt); }
+    .container { max-width: 1080px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.3px;
+    }
+    .section-intro {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    /* ── Course cards ────────────────────────────────── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .card:hover { box-shadow: 0 6px 24px rgba(12,100,31,0.12); transform: translateY(-2px); }
+    .card-accent { height: 5px; background: var(--green-dark); }
+    .card-accent.teal { background: var(--teal); }
+    .card-body { padding: 1.4rem; flex: 1; }
+    .card-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      background: var(--green-light);
+      border-radius: 3px;
+      padding: 0.2rem 0.55rem;
+      margin-bottom: 0.75rem;
+    }
+    .card-tag.methods { color: var(--teal); background: var(--teal-light); }
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+    .card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .card-footer {
+      padding: 1rem 1.4rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-link {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .card-link:hover { text-decoration: underline; }
+    .card-link::after { content: "→"; }
+    .card-gh {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .card-gh a { color: var(--text-muted); }
+    .card-gh a:hover { color: var(--green-dark); }
+
+    /* ── How to use ──────────────────────────────────── */
+    .howto-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .howto-item { display: flex; gap: 1.1rem; align-items: flex-start; }
+    .howto-icon {
+      width: 42px; height: 42px;
+      border-radius: 8px;
+      background: var(--green-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+    }
+    .howto-item h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .howto-item p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── License banner ──────────────────────────────── */
+    .license-banner {
+      background: var(--teal-light);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 6px 6px 0;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .license-banner .cc { font-size: 1.6rem; flex-shrink: 0; }
+    .license-banner p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+    .license-banner strong { color: var(--text); }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 2.5rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    footer h4 { color: #fff; font-size: 0.95rem; margin-bottom: 0.6rem; }
+    footer p, footer a { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+    footer a:hover { color: #fff; text-decoration: underline; }
+    .footer-bottom {
+      max-width: 1080px;
+      margin: 1.5rem auto 0;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .topbar { flex-direction: column; gap: 0.2rem; text-align: center; }
+      header { padding: 1rem; }
+      .hero { padding: 2.5rem 1rem 2rem; }
+      .section { padding: 2.5rem 1rem; }
+      .footer-inner { flex-direction: column; }
+      .footer-bottom { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <span>Centre for Development and Environment · University of Bern</span>
+  <a href="https://www.cde.unibe.ch" target="_blank" rel="noopener">← Back to CDE</a>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="logo-mark"><span>CDE</span></div>
+  <div>
+    <div class="site-title">CDE Teaching</div>
+    <div class="site-title org">Open Education Resources · github.com/CDEteaching</div>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-tag">Education for Sustainable Development</div>
+  <h1>Open Teaching Resources<br>for Sustainability Transformations</h1>
+  <p>
+    Freely accessible course materials, methods guides, and learning resources
+    developed at CDE for research-oriented education on sustainable development,
+    plural economics, and sustainability transformations.
+  </p>
+  <div class="hero-actions">
+    <a href="#courses" class="btn btn-primary">Explore materials</a>
+    <a href="https://github.com/CDEteaching" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub</a>
+  </div>
+</div>
+
+<!-- Course materials -->
+<div class="section" id="courses">
+  <div class="container">
+    <div class="section-label">Course Materials</div>
+    <h2 class="section-title">Available Teaching Resources</h2>
+    <p class="section-intro">
+      Each resource is openly licensed and available as a GitHub repository.
+      Click through to the course page or browse the source files directly on GitHub.
+    </p>
+
+    <div class="cards">
+
+      <!-- Basics of Sustainability -->
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <span class="card-tag">Course Material</span>
+          <h3>Basics of Sustainability</h3>
+          <p>A comprehensive introduction to sustainability covering planetary boundaries,
+             sustainability transformations, and the multiple dimensions of sustainable development.
+             Designed as a university-level special course.</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://cdeteaching.github.io/Basics-of-sustainability/" class="card-link" target="_blank" rel="noopener">Open course</a>
+          <span class="card-gh"><a href="https://github.com/CDEteaching/Basics-of-sustainability" target="_blank" rel="noopener">GitHub</a></span>
+        </div>
+      </div>
+
+      <!-- Sustainable Economics -->
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <span class="card-tag">Course Material</span>
+          <h3>Sustainable Economics</h3>
+          <p>An introduction to sustainable and plural economics, covering heterodox
+             approaches, post-growth thinking, and the economics of sustainability
+             transformations. Developed for master-level students.</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://cdeteaching.github.io/SP_SustainableEconomics/" class="card-link" target="_blank" rel="noopener">Open course</a>
+          <span class="card-gh"><a href="https://github.com/CDEteaching/SP_SustainableEconomics" target="_blank" rel="noopener">GitHub</a></span>
+        </div>
+      </div>
+
+      <!-- ID/TD Methods -->
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <span class="card-tag">Course Material</span>
+          <h3>Inter- and Transdisciplinary Methods</h3>
+          <p>Teaching materials for ID/TD research methods — core competencies for
+             sustainability research, collaborative problem-solving, and working across
+             disciplinary and societal boundaries.</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://cdeteaching.github.io/SP_IDTDmethods/" class="card-link" target="_blank" rel="noopener">Open course</a>
+          <span class="card-gh"><a href="https://github.com/CDEteaching/SP_IDTDmethods" target="_blank" rel="noopener">GitHub</a></span>
+        </div>
+      </div>
+
+      <!-- Introduction to R -->
+      <div class="card">
+        <div class="card-accent teal"></div>
+        <div class="card-body">
+          <span class="card-tag methods">Methods &amp; Tools</span>
+          <h3>Introduction to R</h3>
+          <p>A blog-format introduction to R for data analysis and visualisation,
+             developed for students in sustainability and development research.
+             Covers data wrangling, visualisation, and reproducible workflows.</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://cdeteaching.github.io/Blog_IntroductiontoR/" class="card-link" target="_blank" rel="noopener">Open course</a>
+          <span class="card-gh"><a href="https://github.com/CDEteaching/Blog_IntroductiontoR" target="_blank" rel="noopener">GitHub</a></span>
+        </div>
+      </div>
+
+    </div><!-- /cards -->
+  </div>
+</div>
+
+<!-- How to use -->
+<div class="section section-alt" id="how-to-use">
+  <div class="container">
+    <div class="section-label">For Educators &amp; Students</div>
+    <h2 class="section-title">How to Use These Materials</h2>
+    <p class="section-intro">
+      All resources are designed for reuse and adaptation under open licenses.
+      Whether you are a student, lecturer, or sustainability practitioner, here is how to get started.
+    </p>
+
+    <div class="howto-grid">
+
+      <div class="howto-item">
+        <div class="howto-icon">📖</div>
+        <div>
+          <h4>Read online</h4>
+          <p>Each course has a dedicated web page. Click "Open course" on any card above to access the materials directly in your browser — no download or account needed.</p>
+        </div>
+      </div>
+
+      <div class="howto-item">
+        <div class="howto-icon">📥</div>
+        <div>
+          <h4>Download or fork</h4>
+          <p>Every resource lives in a public GitHub repository. Clone or fork the repo to get all source files, adapt content for your own course, or contribute improvements.</p>
+        </div>
+      </div>
+
+      <div class="howto-item">
+        <div class="howto-icon">🔁</div>
+        <div>
+          <h4>Adapt and reuse</h4>
+          <p>Materials are openly licensed (see below). You are welcome to adapt them for your institutional context — just keep the attribution and share under the same terms.</p>
+        </div>
+      </div>
+
+      <div class="howto-item">
+        <div class="howto-icon">💬</div>
+        <div>
+          <h4>Contribute or get in touch</h4>
+          <p>Found an error, have a suggestion, or want to contribute materials? Open an issue on the relevant GitHub repository, or contact CDE directly via the website below.</p>
+        </div>
+      </div>
+
+      <div class="howto-item">
+        <div class="howto-icon">🏛️</div>
+        <div>
+          <h4>Use in your institution</h4>
+          <p>These resources support Education for Sustainable Development (ESD) at all levels. They are designed to be modular — individual sections can be integrated into existing courses without using the full resource.</p>
+        </div>
+      </div>
+
+      <div class="howto-item">
+        <div class="howto-icon">🌍</div>
+        <div>
+          <h4>Global South &amp; North</h4>
+          <p>Materials are developed with both Global North and South contexts in mind, reflecting CDE's mandate to support sustainable development across different institutional and regional settings.</p>
+        </div>
+      </div>
+
+    </div><!-- /howto-grid -->
+
+    <div class="license-banner">
+      <span class="cc">⚖️</span>
+      <p>
+        <strong>Open License.</strong> Teaching materials in this repository are published under a
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International (CC BY 4.0)</a> license
+        unless stated otherwise in the individual repository.
+        You are free to share and adapt the material for any purpose, provided you give appropriate credit to CDE, University of Bern.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>CDE Teaching</h4>
+      <p>Open Education Resources for<br>sustainability transformations and ESD.<br>
+         <a href="https://github.com/CDEteaching" target="_blank" rel="noopener">github.com/CDEteaching</a>
+      </p>
+    </div>
+    <div>
+      <h4>Centre for Development and Environment</h4>
+      <p>University of Bern<br>
+         Mittelstrasse 43, 3012 Bern, Switzerland<br>
+         <a href="https://www.cde.unibe.ch" target="_blank" rel="noopener">www.cde.unibe.ch</a>
+      </p>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <p>
+        <a href="https://github.com/CDEteaching" target="_blank" rel="noopener">All repositories</a><br>
+        <a href="#courses">Course materials</a><br>
+        <a href="#how-to-use">How to use</a><br>
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0 License</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© Centre for Development and Environment, University of Bern</span>
+    <span>Published under CC BY 4.0 · <a href="https://github.com/CDEteaching" target="_blank" rel="noopener">GitHub</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
