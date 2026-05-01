@@ -11,17 +11,28 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green-dark:   #0c641f;
-      --green-mid:    #0f7d28;
-      --green-light:  #e8f4eb;
-      --teal:         #046178;
-      --teal-light:   #e0f2f5;
-      --red:          #d6002b;
-      --text:         #1a1a1a;
-      --text-muted:   #5a5a5a;
-      --border:       #d8e0d8;
-      --white:        #ffffff;
-      --bg-alt:       #f7f9f7;
+      /* CDE brand */
+      --green-dark:        #0c641f;
+      --green-mid:         #0f7d28;
+      --green-light:       #e8f4eb;
+      --teal:              #046178;
+      --teal-light:        #e0f2f5;
+      --red:               #d6002b;
+      --text:              #1a1a1a;
+      --text-muted:        #5a5a5a;
+      --border:            #d8e0d8;
+      --white:             #ffffff;
+      --bg-alt:            #f7f9f7;
+
+      /* ESD service categories — matching the hexagonal diagram */
+      --cat-mentoring:     #EFB830;
+      --cat-individual:    #F4906A;
+      --cat-networking:    #DF6D50;
+      --cat-study:         #8868B5;
+      --cat-institutional: #5082B5;
+      --cat-knowledge:     #7ABB7A;
+      --cat-knowledge-dk:  #3a7a3a;
+      --cat-knowledge-bg:  #e4f4e4;
     }
 
     html { scroll-behavior: smooth; }
@@ -37,7 +48,7 @@
     a { color: var(--green-dark); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* ── Top bar ─────────────────────────────────────── */
+    /* ── Top bar ───────────────────────────────────────── */
     .topbar {
       background: var(--green-dark);
       color: rgba(255,255,255,0.75);
@@ -50,7 +61,7 @@
     .topbar a { color: rgba(255,255,255,0.85); }
     .topbar a:hover { color: #fff; text-decoration: underline; }
 
-    /* ── Header ──────────────────────────────────────── */
+    /* ── Header ────────────────────────────────────────── */
     header {
       background: var(--white);
       border-bottom: 3px solid var(--green-dark);
@@ -66,67 +77,97 @@
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .logo-mark span {
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: -0.5px;
-    }
-    .site-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--green-dark);
-      letter-spacing: -0.3px;
-    }
+    .logo-mark span { color: #fff; font-weight: 700; font-size: 1rem; letter-spacing: -0.5px; }
+    .site-title { font-size: 1.25rem; font-weight: 700; color: var(--green-dark); letter-spacing: -0.3px; }
     .site-title .org { font-weight: 400; color: var(--text-muted); font-size: 0.9rem; }
 
-    /* ── Hero ────────────────────────────────────────── */
+    /* ── Hero — two-column layout ──────────────────────── */
     .hero {
-      background: linear-gradient(135deg, var(--green-dark) 0%, #1a5c30 60%, var(--teal) 100%);
+      background: linear-gradient(140deg, var(--green-dark) 0%, #1a5c30 55%, #0d5268 100%);
       color: #fff;
-      padding: 4rem 2rem 3.5rem;
-      text-align: center;
+      padding: 3rem 2rem 2.5rem;
     }
+    .hero-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    .hero-text { flex: 1; min-width: 240px; }
+    .hero-diagram { flex: 0 0 460px; max-width: 100%; }
+
     .hero-tag {
       display: inline-block;
       background: rgba(255,255,255,0.15);
       border: 1px solid rgba(255,255,255,0.3);
       border-radius: 20px;
       padding: 0.3rem 0.9rem;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       letter-spacing: 0.5px;
       text-transform: uppercase;
       margin-bottom: 1.2rem;
     }
     .hero h1 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
       font-weight: 700;
-      line-height: 1.2;
+      line-height: 1.25;
       margin-bottom: 1rem;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.4px;
     }
     .hero p {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.85);
-      max-width: 640px;
-      margin: 0 auto 2rem;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 2rem;
       line-height: 1.7;
+      max-width: 460px;
     }
-    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn {
       display: inline-block;
-      padding: 0.7rem 1.6rem;
+      padding: 0.65rem 1.5rem;
       border-radius: 4px;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.93rem;
       cursor: pointer;
       transition: opacity 0.15s, transform 0.15s;
     }
     .btn:hover { opacity: 0.88; transform: translateY(-1px); text-decoration: none; }
     .btn-primary { background: #fff; color: var(--green-dark); }
-    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6); }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.55); }
 
-    /* ── Section wrapper ─────────────────────────────── */
+    /* ── Hex SVG ───────────────────────────────────────── */
+    .hex-svg { width: 100%; display: block; }
+
+    .hex-group {
+      cursor: pointer;
+      transition: filter 0.18s;
+    }
+    .hex-group:hover {
+      filter: brightness(1.12) drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+    }
+    .hex-group polygon {
+      transition: filter 0.18s;
+    }
+    /* Active hex: knowledge resources — white ring */
+    .hex-active polygon.hex-fill {
+      stroke: #ffffff;
+      stroke-width: 5;
+      stroke-opacity: 0.85;
+    }
+    .hex-center-poly {
+      stroke: var(--green-dark);
+      stroke-width: 2.5;
+    }
+    .hex-caption {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    /* ── Section wrapper ───────────────────────────────── */
     .section { padding: 3.5rem 2rem; }
     .section-alt { background: var(--bg-alt); }
     .container { max-width: 1080px; margin: 0 auto; }
@@ -135,7 +176,7 @@
       font-weight: 600;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      color: var(--green-mid);
+      color: var(--cat-knowledge-dk);
       margin-bottom: 0.5rem;
     }
     .section-title {
@@ -152,7 +193,7 @@
       line-height: 1.7;
     }
 
-    /* ── Course cards ────────────────────────────────── */
+    /* ── Course cards ──────────────────────────────────── */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -167,23 +208,24 @@
       flex-direction: column;
       transition: box-shadow 0.2s, transform 0.2s;
     }
-    .card:hover { box-shadow: 0 6px 24px rgba(12,100,31,0.12); transform: translateY(-2px); }
-    .card-accent { height: 5px; background: var(--green-dark); }
-    .card-accent.teal { background: var(--teal); }
+    .card:hover {
+      box-shadow: 0 6px 24px rgba(122,187,122,0.2);
+      transform: translateY(-2px);
+    }
+    .card-accent { height: 5px; background: var(--cat-knowledge); }
     .card-body { padding: 1.4rem; flex: 1; }
     .card-tag {
       display: inline-block;
       font-size: 0.72rem;
       font-weight: 600;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       text-transform: uppercase;
-      color: var(--green-mid);
-      background: var(--green-light);
+      color: var(--cat-knowledge-dk);
+      background: var(--cat-knowledge-bg);
       border-radius: 3px;
       padding: 0.2rem 0.55rem;
       margin-bottom: 0.75rem;
     }
-    .card-tag.methods { color: var(--teal); background: var(--teal-light); }
     .card h3 {
       font-size: 1.05rem;
       font-weight: 600;
@@ -191,11 +233,7 @@
       margin-bottom: 0.6rem;
       line-height: 1.3;
     }
-    .card p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+    .card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
     .card-footer {
       padding: 1rem 1.4rem;
       border-top: 1px solid var(--border);
@@ -213,14 +251,11 @@
     }
     .card-link:hover { text-decoration: underline; }
     .card-link::after { content: "→"; }
-    .card-gh {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
+    .card-gh { font-size: 0.78rem; color: var(--text-muted); }
     .card-gh a { color: var(--text-muted); }
     .card-gh a:hover { color: var(--green-dark); }
 
-    /* ── How to use ──────────────────────────────────── */
+    /* ── How to use ────────────────────────────────────── */
     .howto-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -231,7 +266,7 @@
     .howto-icon {
       width: 42px; height: 42px;
       border-radius: 8px;
-      background: var(--green-light);
+      background: var(--cat-knowledge-bg);
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
       font-size: 1.2rem;
@@ -239,7 +274,7 @@
     .howto-item h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; }
     .howto-item p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
 
-    /* ── License banner ──────────────────────────────── */
+    /* ── License banner ────────────────────────────────── */
     .license-banner {
       background: var(--teal-light);
       border-left: 4px solid var(--teal);
@@ -254,41 +289,35 @@
     .license-banner p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
     .license-banner strong { color: var(--text); }
 
-    /* ── Footer ──────────────────────────────────────── */
-    footer {
-      background: var(--green-dark);
-      color: rgba(255,255,255,0.7);
-      padding: 2.5rem 2rem;
-    }
+    /* ── Footer ────────────────────────────────────────── */
+    footer { background: var(--green-dark); color: rgba(255,255,255,0.7); padding: 2.5rem 2rem; }
     .footer-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
-      flex-wrap: wrap;
+      max-width: 1080px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 2rem; flex-wrap: wrap;
     }
     footer h4 { color: #fff; font-size: 0.95rem; margin-bottom: 0.6rem; }
     footer p, footer a { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
     footer a:hover { color: #fff; text-decoration: underline; }
     .footer-bottom {
-      max-width: 1080px;
-      margin: 1.5rem auto 0;
-      padding-top: 1rem;
+      max-width: 1080px; margin: 1.5rem auto 0; padding-top: 1rem;
       border-top: 1px solid rgba(255,255,255,0.15);
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.45);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      font-size: 0.8rem; color: rgba(255,255,255,0.45);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
     }
 
+    /* ── Responsive ────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .hero-inner { flex-direction: column; }
+      .hero-text { text-align: center; }
+      .hero-actions { justify-content: center; }
+      .hero-text p { margin-left: auto; margin-right: auto; }
+      .hero-diagram { flex: 0 0 auto; width: 100%; max-width: 420px; margin: 0 auto; }
+    }
     @media (max-width: 600px) {
       .topbar { flex-direction: column; gap: 0.2rem; text-align: center; }
       header { padding: 1rem; }
-      .hero { padding: 2.5rem 1rem 2rem; }
+      .hero { padding: 2rem 1rem 1.5rem; }
       .section { padding: 2.5rem 1rem; }
       .footer-inner { flex-direction: column; }
       .footer-bottom { flex-direction: column; }
@@ -312,25 +341,161 @@
   </div>
 </header>
 
-<!-- Hero -->
+<!-- Hero with hexagonal ESD services diagram -->
 <div class="hero">
-  <div class="hero-tag">Education for Sustainable Development</div>
-  <h1>Open Teaching Resources<br>for Sustainability Transformations</h1>
-  <p>
-    Freely accessible course materials, methods guides, and learning resources
-    developed at CDE for research-oriented education on sustainable development,
-    plural economics, and sustainability transformations.
-  </p>
-  <div class="hero-actions">
-    <a href="#courses" class="btn btn-primary">Explore materials</a>
-    <a href="https://github.com/CDEteaching" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub</a>
-  </div>
+  <div class="hero-inner">
+
+    <!-- Left: text -->
+    <div class="hero-text">
+      <span class="hero-tag">Education for Sustainable Development</span>
+      <h1>Open Teaching Resources<br>for Sustainability Transformations</h1>
+      <p>
+        Freely accessible course materials, methods guides, and learning resources
+        developed at CDE — supporting research-oriented education on sustainable
+        development, plural economics, and sustainability transformations.
+      </p>
+      <div class="hero-actions">
+        <a href="#courses" class="btn btn-primary">Explore materials</a>
+        <a href="https://github.com/CDEteaching" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub</a>
+      </div>
+    </div>
+
+    <!-- Right: interactive hex diagram -->
+    <div class="hero-diagram">
+      <!--
+        Flat-top regular hexagons, circumradius R=80, center-to-center d≈139
+        Center: (240, 248)  Top: (240,109)  TR: (360,179)  BR: (360,317)
+        Bottom: (240,387)   BL: (120,317)   TL: (120,179)
+        Polygon for center (cx,cy): (cx+80,cy) (cx+40,cy+69) (cx-40,cy+69)
+                                    (cx-80,cy) (cx-40,cy-69) (cx+40,cy-69)
+      -->
+      <svg class="hex-svg" viewBox="0 0 480 500"
+           xmlns="http://www.w3.org/2000/svg"
+           role="img"
+           aria-label="CDE ESD services overview — six service categories arranged around a central hexagon">
+        <defs>
+          <filter id="hex-shadow" x="-15%" y="-15%" width="130%" height="130%">
+            <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.18"/>
+          </filter>
+        </defs>
+
+        <!-- ── CENTER: Our services (white, no link) -->
+        <g class="hex-center" aria-hidden="true">
+          <polygon class="hex-center-poly"
+            points="320,248 280,317 200,317 160,248 200,179 280,179"
+            fill="#ffffff"/>
+          <text text-anchor="middle" font-family="Inter, Arial, sans-serif"
+                font-size="12" font-weight="700" fill="#0c641f">
+            <tspan x="241" dy="0" y="241">Our</tspan>
+            <tspan x="241" dy="15">services</tspan>
+          </text>
+        </g>
+
+        <!-- ── TOP: mentoring & coaching -->
+        <a href="https://www.cde.unibe.ch" target="_blank" rel="noopener"
+           aria-label="Mentoring & Coaching — CDE ESD services">
+          <g class="hex-group" filter="url(#hex-shadow)">
+            <polygon class="hex-fill"
+              points="320,109 280,178 200,178 160,109 200,40 280,40"
+              fill="#EFB830"/>
+            <text text-anchor="middle" font-family="Inter, Arial, sans-serif"
+                  font-size="10" font-weight="600" fill="#1a1a1a">
+              <tspan x="240" y="100">mentoring &amp;</tspan>
+              <tspan x="240" dy="13">coaching</tspan>
+            </text>
+          </g>
+        </a>
+
+        <!-- ── TOP-RIGHT: individual capacity strengthening -->
+        <a href="https://www.cde.unibe.ch" target="_blank" rel="noopener"
+           aria-label="Individual Capacity Strengthening — CDE ESD services">
+          <g class="hex-group" filter="url(#hex-shadow)">
+            <polygon class="hex-fill"
+              points="440,179 400,248 320,248 280,179 320,110 400,110"
+              fill="#F4906A"/>
+            <text text-anchor="middle" font-family="Inter, Arial, sans-serif"
+                  font-size="10" font-weight="600" fill="#1a1a1a">
+              <tspan x="360" y="166">individual</tspan>
+              <tspan x="360" dy="13">capacity</tspan>
+              <tspan x="360" dy="13">strengthening</tspan>
+            </text>
+          </g>
+        </a>
+
+        <!-- ── BOTTOM-RIGHT: networking & exchange within CoP -->
+        <a href="https://www.cde.unibe.ch" target="_blank" rel="noopener"
+           aria-label="Networking & Exchange within Communities of Practice — CDE ESD services">
+          <g class="hex-group" filter="url(#hex-shadow)">
+            <polygon class="hex-fill"
+              points="440,317 400,386 320,386 280,317 320,248 400,248"
+              fill="#DF6D50"/>
+            <text text-anchor="middle" font-family="Inter, Arial, sans-serif"
+                  font-size="10" font-weight="600" fill="#ffffff">
+              <tspan x="360" y="304">networking &amp;</tspan>
+              <tspan x="360" dy="13">exchange</tspan>
+              <tspan x="360" dy="13">within CoP</tspan>
+            </text>
+          </g>
+        </a>
+
+        <!-- ── BOTTOM: CDE study programmes & continuing education -->
+        <a href="https://www.cde.unibe.ch" target="_blank" rel="noopener"
+           aria-label="CDE Study Programmes & Continuing Education — CDE ESD services">
+          <g class="hex-group" filter="url(#hex-shadow)">
+            <polygon class="hex-fill"
+              points="320,387 280,456 200,456 160,387 200,318 280,318"
+              fill="#8868B5"/>
+            <text text-anchor="middle" font-family="Inter, Arial, sans-serif"
+                  font-size="10" font-weight="600" fill="#ffffff">
+              <tspan x="240" y="371">CDE study</tspan>
+              <tspan x="240" dy="13">programmes &amp;</tspan>
+              <tspan x="240" dy="13">cont. education</tspan>
+            </text>
+          </g>
+        </a>
+
+        <!-- ── BOTTOM-LEFT: institutional capacity strengthening -->
+        <a href="https://www.cde.unibe.ch" target="_blank" rel="noopener"
+           aria-label="Institutional Capacity Strengthening — CDE ESD services">
+          <g class="hex-group" filter="url(#hex-shadow)">
+            <polygon class="hex-fill"
+              points="200,317 160,386 80,386 40,317 80,248 160,248"
+              fill="#5082B5"/>
+            <text text-anchor="middle" font-family="Inter, Arial, sans-serif"
+                  font-size="10" font-weight="600" fill="#ffffff">
+              <tspan x="120" y="304">institutional</tspan>
+              <tspan x="120" dy="13">capacity</tspan>
+              <tspan x="120" dy="13">strengthening</tspan>
+            </text>
+          </g>
+        </a>
+
+        <!-- ── TOP-LEFT: knowledge resources & materials (active — this page) -->
+        <a href="#courses" aria-label="Knowledge Resources & Materials — scroll to course materials on this page">
+          <g class="hex-group hex-active" filter="url(#hex-shadow)">
+            <polygon class="hex-fill"
+              points="200,179 160,248 80,248 40,179 80,110 160,110"
+              fill="#7ABB7A"/>
+            <text text-anchor="middle" font-family="Inter, Arial, sans-serif"
+                  font-size="10" font-weight="600" fill="#1a1a1a">
+              <tspan x="120" y="166">knowledge</tspan>
+              <tspan x="120" dy="13">resources &amp;</tspan>
+              <tspan x="120" dy="13">materials</tspan>
+            </text>
+          </g>
+        </a>
+
+      </svg>
+      <p class="hex-caption">Click a category to explore · This page covers <em>knowledge resources &amp; materials</em></p>
+    </div>
+
+  </div><!-- /hero-inner -->
 </div>
 
 <!-- Course materials -->
 <div class="section" id="courses">
   <div class="container">
-    <div class="section-label">Course Materials</div>
+    <div class="section-label">Knowledge Resources &amp; Materials</div>
     <h2 class="section-title">Available Teaching Resources</h2>
     <p class="section-intro">
       Each resource is openly licensed and available as a GitHub repository.
@@ -343,7 +508,7 @@
       <div class="card">
         <div class="card-accent"></div>
         <div class="card-body">
-          <span class="card-tag">Course Material</span>
+          <span class="card-tag">Knowledge Resources &amp; Materials</span>
           <h3>Basics of Sustainability</h3>
           <p>A comprehensive introduction to sustainability covering planetary boundaries,
              sustainability transformations, and the multiple dimensions of sustainable development.
@@ -359,7 +524,7 @@
       <div class="card">
         <div class="card-accent"></div>
         <div class="card-body">
-          <span class="card-tag">Course Material</span>
+          <span class="card-tag">Knowledge Resources &amp; Materials</span>
           <h3>Sustainable Economics</h3>
           <p>An introduction to sustainable and plural economics, covering heterodox
              approaches, post-growth thinking, and the economics of sustainability
@@ -375,7 +540,7 @@
       <div class="card">
         <div class="card-accent"></div>
         <div class="card-body">
-          <span class="card-tag">Course Material</span>
+          <span class="card-tag">Knowledge Resources &amp; Materials</span>
           <h3>Inter- and Transdisciplinary Methods</h3>
           <p>Teaching materials for ID/TD research methods — core competencies for
              sustainability research, collaborative problem-solving, and working across
@@ -389,9 +554,9 @@
 
       <!-- Introduction to R -->
       <div class="card">
-        <div class="card-accent teal"></div>
+        <div class="card-accent"></div>
         <div class="card-body">
-          <span class="card-tag methods">Methods &amp; Tools</span>
+          <span class="card-tag">Knowledge Resources &amp; Materials</span>
           <h3>Introduction to R</h3>
           <p>A blog-format introduction to R for data analysis and visualisation,
              developed for students in sustainability and development research.
@@ -455,7 +620,7 @@
         <div class="howto-icon">🏛️</div>
         <div>
           <h4>Use in your institution</h4>
-          <p>These resources support Education for Sustainable Development (ESD) at all levels. They are designed to be modular — individual sections can be integrated into existing courses without using the full resource.</p>
+          <p>These resources support Education for Sustainable Development (ESD) at all levels. They are modular — individual sections can be integrated into existing courses without using the full resource.</p>
         </div>
       </div>
 
@@ -467,7 +632,7 @@
         </div>
       </div>
 
-    </div><!-- /howto-grid -->
+    </div>
 
     <div class="license-banner">
       <span class="cc">⚖️</span>
