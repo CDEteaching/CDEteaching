@@ -2,7 +2,7 @@
 
 > **Live site:** [cdeteaching.github.io](https://cdeteaching.github.io)
 
-Landing page for the [CDEteaching](https://github.com/CDEteaching) GitHub organisation. It provides an overview of all open teaching resources developed at the [Centre for Development and Environment (CDE)](https://www.cde.unibe.ch), University of Bern, with a focus on Education for Sustainable Development (ESD) and sustainability transformations.
+Landing page for the [CDEteaching](https://github.com/CDEteaching) GitHub organisation. It provides an overview of all open teaching resources developed at the [Centre for Development and Environment (CDE)](https://www.cde.unibe.ch), University of Bern, with a focus on Education for Sustainable Development (ESD) and Sustainability Transformations.
 
 ---
 
@@ -57,13 +57,6 @@ No build tools required. Open `index.html` directly in any browser:
 open index.html          # macOS
 start index.html         # Windows
 xdg-open index.html      # Linux
-```
-
-Or serve locally to avoid any CORS issues with fonts:
-
-```bash
-python -m http.server 8000
-# → http://localhost:8000
 ```
 
 ---
