@@ -1,7 +1,5 @@
 # CDE Teaching — Landing Page
 
-> **Live site:** [cdeteaching.github.io/CDEteaching/](cdeteaching.github.io/CDEteaching/)
-
 Landing page for the [CDEteaching](https://github.com/CDEteaching) GitHub organisation. It provides an overview of all open education resources (OER) developed at the [Centre for Development and Environment (CDE)](https://www.cde.unibe.ch), University of Bern, with a focus on Education for Sustainable Development (ESD) and Sustainability Transformations.
 
 ---
