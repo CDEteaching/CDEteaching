@@ -1,8 +1,11 @@
 # CDE Teaching — Landing Page
 
-> **Live site:** [cdeteaching.github.io](https://cdeteaching.github.io)
+Landing page for the [CDEteaching](https://github.com/CDEteaching) GitHub organisation. 
+This platform is hosted by the [Centre for Development and Environment (CDE)](https://www.cde.unibe.ch), a leading research centre for sustainable development. CDE combines research, education, and practice to co-create knowledge for just and sustainable transformations worldwide.
 
-Landing page for the [CDEteaching](https://github.com/CDEteaching) GitHub organisation. It provides an overview of all open teaching resources developed at the [Centre for Development and Environment (CDE)](https://www.cde.unibe.ch), University of Bern, with a focus on Education for Sustainable Development (ESD) and Sustainability Transformations.
+This platform provides an overview of all open education resources (OER) developed at CDE with a focus on Education for Sustainable Development (ESD) and Sustainability Transformations.
+You can find an overview of all published OER here: https://cdeteaching.github.io/CDEteaching/
+
 
 ---
 
@@ -89,9 +92,7 @@ The page uses CDE's official brand colours and Inter as the typeface (loaded fro
 
 ## License
 
-Teaching materials across the CDEteaching repositories are published under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) unless stated otherwise in the individual repository.
-
-The landing page code (`index.html`) is released under [MIT](https://opensource.org/licenses/MIT).
+Teaching materials across the CDEteaching repositories are published under [Creative Commons Attribution 4.0 International (CC BY NC SA 4.0)]([https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by-nc-sa/4.0/)) unless stated otherwise in the individual repository.
 
 ---
 
