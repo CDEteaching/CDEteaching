@@ -90,9 +90,7 @@ The page uses CDE's official brand colours and Inter as the typeface (loaded fro
 
 ## License
 
-Teaching materials across the CDEteaching repositories are published under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) unless stated otherwise in the individual repository.
-
-The landing page code (`index.html`) is released under [MIT](https://opensource.org/licenses/MIT).
+Teaching materials across the CDEteaching repositories are published under [Creative Commons Attribution 4.0 International (CC BY NC SA 4.0)]([https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by-nc-sa/4.0/)) unless stated otherwise in the individual repository.
 
 ---
 
