@@ -92,7 +92,7 @@ The page uses CDE's official brand colours and Inter as the typeface (loaded fro
 
 ## License
 
-Teaching materials across the CDEteaching repositories are published under [Creative Commons Attribution 4.0 International (CC BY NC SA 4.0)]([https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by-nc-sa/4.0/)) unless stated otherwise in the individual repository.
+Teaching materials across the CDEteaching repositories are published under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/) unless stated otherwise in the individual repository.
 
 ---
 
